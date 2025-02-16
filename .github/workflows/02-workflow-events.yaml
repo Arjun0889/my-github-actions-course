@@ -1,6 +1,6 @@
 name: 02 - Workflow Events
 on:
-  workflow_disptach:
+  workflow_dispatch:
 
 jobs:
   echo:
