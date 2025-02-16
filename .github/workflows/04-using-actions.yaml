@@ -5,6 +5,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 04-using-actions/react-app
     steps:
       - name: Setup Code
         uses: actions/checkout@v4
@@ -18,10 +21,7 @@ jobs:
         run: |
           echo "Current directory is: $(pwd)"
       - name: Install Dependencies
-        run: |
-          cd 04-using-actions/react-app
-          npm ci
+        run: npm ci
       - name: Run Unit Tests
-        working-directory: 04-using-actions/react-app
         run: npm run test
 
