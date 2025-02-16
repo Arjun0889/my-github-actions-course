@@ -1,5 +1,5 @@
 name: 01 - Building Blocks
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
@@ -17,3 +17,10 @@ jobs:
 
       - name: Say goodbye
         run: echo "Goodbye!"
+
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the triggers
+        run: echo "I have been triggered by a ${{ github.event_name }} event"
+  
