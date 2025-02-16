@@ -19,7 +19,7 @@ jobs:
           echo "Current directory is: $(pwd)"
       - name: Install Dependencies
         run: |
-          cd react-app
+          cd 04-using-actions/react-app
           npm ci
       - name: Run Unit Tests
         working-directory: 04-using-actions/react-app
