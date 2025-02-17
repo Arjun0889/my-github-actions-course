@@ -6,7 +6,6 @@ on:
       debug:
         type: boolean
         default: false
-  push:
 
 env:
   MY_WORKFLOW_VAR: 'workflow'
