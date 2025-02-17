@@ -6,11 +6,17 @@ on:
       debug:
         type: boolean
         default: false
-
   push:
+
+env:
+  MY_WORKFLOW_VAR: 'workflow'
+  MY_OVERWRITTEN_VAR: 'workflow'
 
 jobs:
   echo-data:
+    env:
+      MY_JOB_VAR: 'job'
+      MY_OVERWRITTEN_VAR: 'job'
     runs-on: ubuntu-latest
     steps:
       - name: Display Information
@@ -25,3 +31,19 @@ jobs:
       - name: Display Variable info
         run: |
           echo "My Variable: ${{ vars.MY_VAR}}"
+      
+      - name: Print Env variables
+        env:
+          MY_OVERWRITTEN_VAR: 'step'
+        run: |
+          echo "My workflow Env variable: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "My workflow overwritten Env variable: ${{ env.MY_OVERWRITTEN_VAR }}"
+          echo "My Job Env variable: ${{ env.MY_JOB_VAR }}"
+          echo "My Job Overwritten Env variable: ${{ env.MY_OVERWRITTEN_VAR}}"
+
+      - name: Print Env variables 2
+        run: |
+          echo "My workflow Env variable: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "My workflow overwritten Env variable: ${{ env.MY_OVERWRITTEN_VAR }}"
+          echo "My Job Env variable: ${{ env.MY_JOB_VAR }}"
+          echo "My Job Overwritten Env variable: ${{ env.MY_OVERWRITTEN_VAR}}"
