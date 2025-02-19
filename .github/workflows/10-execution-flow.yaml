@@ -1,5 +1,5 @@
 name: 10 - Controlling the Execution Flow
-run-name: 07 - Using Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF'}}
+run-name: 07 - Using Expressions | DEBUG - ${{ inputs.pass-unit-tests && 'ON' || 'OFF'}}
 
 on:
   workflow_dispatch:
