@@ -29,21 +29,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploying to nonprod
-        run: "Deploying to nonprod..."
+        run: echo "Deploying to nonprod..."
   e2e-tests:
     needs:
       - deploy-nonprod
     runs-on: ubuntu-latest
     steps:
       - name: Running E2E tests
-        run: "Running E2E tests"
+        run: echo "Running E2E tests"
   load-tests:
     needs:
       - deploy-nonprod
     runs-on: ubuntu-latest
     steps:
       - name: Running load tests
-        run: "Running load tests"
+        run: echo "Running load tests"
 
 
   deploy-prod:
@@ -53,4 +53,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploying to prod
-        run: "Deploying to prod..."
+        run: echo "Deploying to prod..."
