@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Build
         run: |
-          echo "Building from tag <retrieve the value of the tag input here> "
+          echo "Building from tag ${{ inputs.tag }} "
 
   deploy:
     runs-on: ubuntu-latest
@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Deploy
         run: |
-          echo "Deploying to <retrieve the value of the target input here>"
+          echo "Deploying to ${{inputs.target}}"
