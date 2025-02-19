@@ -12,7 +12,7 @@ jobs:
       - name: Print PR Labels
         run: |
       
-          echo ${{ toJson(github.event.pull_request.labels) }}
+          echo "${{ toJson(github.event.pull_request.labels) }}"
           
 
       - name: I will be executed
