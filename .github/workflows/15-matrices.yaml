@@ -48,11 +48,10 @@ jobs:
         size: [small, large]
         os:
           - ubuntu-latest
-        include:
+        include:  # include can be used to add additional jobs with the parameters that we pass in. It will not override the exisiting jobs
           - color: red
             shape: triangle
-            size: small   # Ensure `size` is defined
-            os: ubuntu-latest
+
 
     steps:
       - name: Dummy step
