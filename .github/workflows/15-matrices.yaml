@@ -53,8 +53,6 @@ jobs:
                         # https://github.com/Arjun0889/my-github-actions-course/actions/runs/13480919935/job/37665965401
           - color: red
             opacity: 75
-            shape: triangle
-            size: small
             os: ubuntu-latest
 
     steps:
