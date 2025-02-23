@@ -18,8 +18,6 @@ jobs:
           - os: ubuntu-latest
             node-version: '21.x'
             tag: experimental
-
-
     steps:
       - name: Setup node
         uses: actions/setup-node@v3
@@ -37,7 +35,7 @@ jobs:
           sleep 10
       
       - name: Upload test results
-        run: echo 
+        run: echo "Uploading test results"
 
   include-example:
     name: ${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}
