@@ -51,6 +51,8 @@ jobs:
         include:
           - color: red
             shape: triangle
+            size: small   # Ensure `size` is defined
+            os: ubuntu-latest
 
     steps:
       - name: Dummy step
