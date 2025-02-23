@@ -38,7 +38,7 @@ jobs:
         run: echo "Uploading test results"
 
   include-example:
-    name: ${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}
+    name: ${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.opacity }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true # Use false for jobs to not fail if one of the matrix job fails; it is true by default
@@ -49,6 +49,7 @@ jobs:
         os:
           - ubuntu-latest
         include:  # include can be used to add additional jobs with the parameters that we pass in. It will not override the exisiting jobs
+          - opacity: 50
           - color: red
             shape: triangle
 
@@ -56,4 +57,4 @@ jobs:
     steps:
       - name: Dummy step
         run: |
-          echo "${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}"
+          echo "${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.opacity }}"
