@@ -52,6 +52,8 @@ jobs:
           - opacity: 50
           - color: red
             shape: triangle
+            size: small
+            os: ubuntu-latest
 
 
     steps:
