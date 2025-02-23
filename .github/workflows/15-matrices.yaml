@@ -57,8 +57,8 @@ jobs:
 
           - color: green
             shape: circle
-            size: medium
-        exclude:
+            size: small
+        exclude: # This gets executed before include
           - color: green
             shape: circle
     steps:
