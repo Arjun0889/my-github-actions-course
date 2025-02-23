@@ -6,6 +6,7 @@ jobs:
     name: Running on ${{ matrix.os }} with node-version ${{ matrix.node-version }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: true # Use false for jobs to not fail if one of the matrix job fails; it is true by default
       matrix: 
         node-version: [18.x, 20.x, 21.x]
         os:
