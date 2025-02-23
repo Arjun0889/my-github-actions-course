@@ -39,15 +39,14 @@ jobs:
 
   include-example:
     name: ${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.opacity }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true # Use false for jobs to not fail if one of the matrix job fails; it is true by default
       matrix: 
         color: [red, green]
         shape: [circle, square] 
         size: [small, large]
-        os:
-          - ubuntu-latest
+
         include:  # include can be used to add additional jobs with the parameters that we pass in. It will not override the exisiting jobs if the paramters you passed is different
           - opacity: 50 # If you have a paramter like this only in include that gets used in all the jobs that get genereated, but the one with include will not have this
                         # https://github.com/Arjun0889/my-github-actions-course/actions/runs/13480919935/job/37665965401
