@@ -1,4 +1,4 @@
-name: 7 - 1 - Custom Actions - Composite
+name: 17 - 1 - Custom Actions - Composite
 on:
   workflow_dispatch:
     inputs:
@@ -16,7 +16,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     defaults:
-      run: ${{ env.working-directory }}
+      run: 
+        working-directory: ${{ env.working-directory }}
     steps:
       - name: Setup code
         uses: actions/checkout@v4
