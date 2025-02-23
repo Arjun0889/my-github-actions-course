@@ -11,6 +11,12 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
+        include: # We can add something specific and do not want have that applicable to all the available ones in matrix section
+          - os: ubuntu-latest
+            node-version: '16.x'
+          - os: ubuntu-latest
+            node-version: '21.x'
+            tag: experimental
 
 
     steps:
@@ -19,7 +25,15 @@ jobs:
         with: 
           node-version: ${{ matrix.node-version }}
 
+      - name: Fail if experimental
+        if: matrix.tag == 'experimental'
+        run: exit 1
+
 
       - name: Perform some tests
         run: |
           echo "Running tests on OS ${{ matrix.os}} and NodeJS ${{ matrix.node-version }}"
+          sleep 10
+      
+      - name: Upload test results
+        run: echo 
