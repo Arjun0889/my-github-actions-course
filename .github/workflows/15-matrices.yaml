@@ -48,13 +48,14 @@ jobs:
         size: [small, large]
         os:
           - ubuntu-latest
-        include:  # include can be used to add additional jobs with the parameters that we pass in. It will not override the exisiting jobs
-          - opacity: 50
+        include:  # include can be used to add additional jobs with the parameters that we pass in. It will not override the exisiting jobs if the paramters you passed is different
+          - opacity: 50 # If you have a paramter like this only in include that gets used in all the jobs that get genereated, but the one with include will not have this
+                        # https://github.com/Arjun0889/my-github-actions-course/actions/runs/13480919935/job/37665965401
           - color: red
+            opacity: 75
             shape: triangle
             size: small
             os: ubuntu-latest
-
 
     steps:
       - name: Dummy step
