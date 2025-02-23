@@ -54,8 +54,13 @@ jobs:
           - color: red
             opacity: 75
             os: ubuntu-latest
+
+          - color: green
+            shape: circle
+            size: medium
         exclude:
-          - opacity: 75
+          - color: green
+            shape: circle
     steps:
       - name: Dummy step
         run: |
