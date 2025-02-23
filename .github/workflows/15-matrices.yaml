@@ -38,3 +38,23 @@ jobs:
       
       - name: Upload test results
         run: echo 
+
+  include-example:
+    name: ${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true # Use false for jobs to not fail if one of the matrix job fails; it is true by default
+      matrix: 
+        color: [red, green]
+        shape: [circle, square] 
+        size: [small, large]
+        os:
+          - ubuntu-latest
+        include:
+          - color: red
+            shape: triangle
+
+    steps:
+      - name: Dummy step
+        run: |
+          echo "${{ matrix.color}}-${{ matrix.shape }}-${{ matrix.size }}"
