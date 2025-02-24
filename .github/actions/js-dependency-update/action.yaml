@@ -17,6 +17,7 @@ inputs:
     required: true
   debug:
     description: Whether the output debug messages to the consolexs
+    default: 'false'
 runs:
   using: node20
   main: index.js
