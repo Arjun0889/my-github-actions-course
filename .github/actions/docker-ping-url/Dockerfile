@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN ls -al /app
 
-CMD [ "python", "/app/main.py" ]
+CMD env && python /app/main.py

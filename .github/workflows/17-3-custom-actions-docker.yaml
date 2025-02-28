@@ -3,8 +3,18 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        type: string
+        type: choice
+        options:
+          - 'https://www.google.com'
+          - 'https://www.notavailable.com'
         default: 'https://www.google.com'
+      max_trials:
+        description: Maximum trials until action fails
+        default: '10'
+      delay:
+        description: Delay in seconds between trials
+        default: '5'
+
 jobs:
   ping-url:
     runs-on: ubuntu-latest
